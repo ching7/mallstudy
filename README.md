@@ -37,3 +37,16 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver
 ~~~
 
 * `Generator`类在使用的时候可能会出现xml文件加载不到的情况，如果确定路径正确。可以重新建一个空的web项目，添加maven支持后。赋值代码过去重新运行
+  * pom.xml出现jar导入不到工程时，可以在项目根目录使用cmd的maven命令。观察报错
+* Controller中使用Restful风格的接口形式
+
+~~~java
+//get 无入参或者少量入参，查询-删除
+@RequestMapping(value = "/listAll", method = RequestMethod.GET)
+@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//post 入参json格式，新增-修改
+@RequestMapping(value = "/create", method = RequestMethod.POST)
+@RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+~~~
+
