@@ -65,7 +65,7 @@ public class CommentGenerator extends DefaultCommentGenerator  {
         addJavadocTag(field, false);
         field.addJavaDocLine(" */");
     }
-        
+
     @Override
     public void addJavaFileComment(CompilationUnit compilationUnit) {
         super.addJavaFileComment(compilationUnit);

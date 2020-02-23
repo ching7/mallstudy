@@ -3,12 +3,13 @@
 
 ## 1 mall-tiny-01 学习笔记
 
-* mall整合`SpringBoot`+`MyBatis`搭建基本骨架
-  * 涉及知识点
-    * `SpringBoot` `MyBatis` - 待深入
-    * `PagerHelper` - 待学习
-    * `Druid` - 待深入
-    * `Mybatis generator`- 待学习
+### 1.1 mall整合`SpringBoot`+`MyBatis`搭建基本骨架
+
+* 涉及知识点
+  * `SpringBoot` `MyBatis` - 待深入
+  * `PagerHelper` - 待学习
+  * `Druid` - 待深入
+  * `Mybatis generator`- 待学习
 
 * 平常的数据库账号密码测试阶段最好设置成root，root，上线阶段在做修改
 * 项目数据库脚本可以导出以作备份
@@ -50,3 +51,10 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver
 @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
 ~~~
 
+### 1.2 mall整合SwaggerUI
+
+* 实现controller接口可视化以及接口测试
+* 需要新增SwaggerUi配置，指定扫描包路径和注解
+* 需要调整`Mybatis Generator`的`CommentGenerator`配置，使生成的Bean字段上有数据库的备注，方便调试
+* 需要重新生成Bean，Mapper，Mapper.xml。
+* 注意xml的生成是否存在文件内容叠加，而不是覆盖，导致启动时报
