@@ -57,4 +57,30 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver
 * 需要新增SwaggerUi配置，指定扫描包路径和注解
 * 需要调整`Mybatis Generator`的`CommentGenerator`配置，使生成的Bean字段上有数据库的备注，方便调试
 * 需要重新生成Bean，Mapper，Mapper.xml。
-* 注意xml的生成是否存在文件内容叠加，而不是覆盖，导致启动时报
+* 注意xml的生成是否存在文件内容叠加，而不是覆盖，导致启动时报错
+
+### 1.3 mall整合redis实现缓存功能
+
+* 以模拟手机验证码为例，注意redis没启动时，项目启动会报错但是不影响其他功能使用
+
+### 1.4 mall整合Springsecurity和jwt实现认证和授权
+
+* 注意`application.properties`中的`jwt（JSON WEB TOKEN）`配置。配置中切勿加 空格，可能会导致认证失败
+
+~~~properties
+##jwt配置
+#JWT存储的请求头
+jwt.tokenHeader: Authorization
+#JWT加解密使用的密钥
+jwt.secret: mySecret
+#JWT的超期限时间(60*60*24)
+jwt.expiration: 604800
+#JWT负载中拿到开头
+jwt.tokenHead: Bearer
+~~~
+
+### 1.5 mall整合SpringTask实现定时任务
+
+* 注意配置类的增加，用于初始化
+* 了解注解的使用方法，尤其是 `@Scheduled(cron = "1/5 * * ? * ?")`的汉语，[参考](https://blog.csdn.net/m0_37179470/article/details/81271607)
+
