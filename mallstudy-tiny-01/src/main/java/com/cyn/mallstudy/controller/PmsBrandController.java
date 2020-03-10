@@ -23,12 +23,8 @@ import java.util.List;
  * @Date 2020/2/21 22:32
  * @Author: chenyn22577
  * @Version: 1.0
- * @Description: 实现PmsBrand表中的添加、修改、删除及分页查询接口
+ * @Description: 品牌管理Controller,实现PmsBrand表中的添加、修改、删除及分页查询接口
  **/
-
-/**
- * 品牌管理Controller
- */
 @Api(tags = "PmsBrandController", description = "商品品牌管理")
 @Controller
 @RequestMapping("/brand")

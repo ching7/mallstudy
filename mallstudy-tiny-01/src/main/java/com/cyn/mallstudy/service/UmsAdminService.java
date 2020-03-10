@@ -2,8 +2,6 @@ package com.cyn.mallstudy.service;
 
 import com.cyn.mallstudy.mbg.model.UmsAdmin;
 import com.cyn.mallstudy.mbg.model.UmsPermission;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,7 +15,6 @@ import java.util.List;
  * @Version: 1.0
  * @Description: 后台管理员Service
  **/
-@Service
 public interface UmsAdminService {
     /**
      * 根据用户名获取后台管理员

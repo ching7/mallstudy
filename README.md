@@ -65,9 +65,10 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver
 
 ### 1.4 mall整合Springsecurity和jwt实现认证和授权
 
-* 注意`application.properties`中的`jwt（JSON WEB TOKEN）`配置。配置中切勿加 空格，可能会导致认证失败
+* `jwt（JSON WEB TOKEN）`实现登陆用户认证
 
 ~~~properties
+## 注意application.properties中的jwt配置。配置中切勿加 空格，可能会导致认证失败
 ##jwt配置
 #JWT存储的请求头
 jwt.tokenHeader: Authorization
@@ -77,10 +78,26 @@ jwt.secret: mySecret
 jwt.expiration: 604800
 #JWT负载中拿到开头
 jwt.tokenHead: Bearer
+
+# 注意
 ~~~
+
+* `Springsecurity`实现授权权限控制，对应`controller`添加注解 @PreAuthorize("hasAuthority('pms:brand:update')")`
+
+~~~properties
+hasAuthority 会从已经登陆用户的token取出用户信息，对比权限
+
+用户权限在登陆时，通过实现UserDetails接口的getAuthorities方法，将当前用户的权限放入token中
+~~~
+
+
 
 ### 1.5 mall整合SpringTask实现定时任务
 
 * 注意配置类的增加，用于初始化
 * 了解注解的使用方法，尤其是 `@Scheduled(cron = "1/5 * * ? * ?")`的汉语，[参考](https://blog.csdn.net/m0_37179470/article/details/81271607)
+
+### 1.6 mall整合Elasticsearch实现表数据搜索
+
+* 注意对应Dao的编写。Elasticsearch用于大数据查找效率高
 
