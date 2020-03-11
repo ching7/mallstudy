@@ -101,3 +101,7 @@ hasAuthority 会从已经登陆用户的token取出用户信息，对比权限
 
 * 注意对应Dao的编写。Elasticsearch用于大数据查找效率高
 
+### 1.7 mall整合RabbitMQ实现延时消息
+
+* 注意理解`RabbitMqConfig`配置文件的含义，队列交换机的绑定策略，交换机类型的选择
+* 延时消息的处理
