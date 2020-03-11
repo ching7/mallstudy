@@ -90,6 +90,17 @@ hasAuthority 会从已经登陆用户的token取出用户信息，对比权限
 用户权限在登陆时，通过实现UserDetails接口的getAuthorities方法，将当前用户的权限放入token中
 ~~~
 
+* 测试时可以调整`SecurityConfig`类的编写，使接口无需权限校验
+
+~~~properties
+.permitAll()
+//测试时，下面两行调整
+.antMatchers("/**")//测试时全部运行访问
+
+注意，接口的controller上，不能有权限校验的注解，类似@PreAuthorize("hasAuthority('pms:brand:delete')")
+否则依然会校验权限
+~~~
+
 
 
 ### 1.5 mall整合SpringTask实现定时任务
