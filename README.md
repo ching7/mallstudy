@@ -1,9 +1,11 @@
 # mallstudy
-整合已学习的Java技术。'https://github.com/macrozheng/mall' - 学习记录
+整合已学习的Java技术 - 学习记录
 
-## 1 mall-tiny-01 学习笔记
+## **mall-tiny-01 整合**
 
-### 1.1 mall整合`SpringBoot`+`MyBatis`搭建基本骨架
+springBoot整合各类技术demo
+
+### mall整合`SpringBoot`+`MyBatis`搭建基本骨架
 
 * 涉及知识点
   * `SpringBoot` `MyBatis` - 待深入
@@ -51,7 +53,7 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver
 @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
 ~~~
 
-### 1.2 mall整合SwaggerUI
+### mall整合SwaggerUI
 
 * 实现controller接口可视化以及接口测试
 * 需要新增SwaggerUi配置，指定扫描包路径和注解
@@ -59,11 +61,11 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver
 * 需要重新生成Bean，Mapper，Mapper.xml。
 * 注意xml的生成是否存在文件内容叠加，而不是覆盖，导致启动时报错
 
-### 1.3 mall整合redis实现缓存功能
+### mall整合redis实现缓存功能
 
 * 以模拟手机验证码为例，注意redis没启动时，项目启动会报错但是不影响其他功能使用
 
-### 1.4 mall整合Springsecurity和jwt实现认证和授权
+### mall整合Springsecurity和jwt实现认证和授权
 
 * `jwt（JSON WEB TOKEN）`实现登陆用户认证
 
@@ -103,16 +105,22 @@ hasAuthority 会从已经登陆用户的token取出用户信息，对比权限
 
 
 
-### 1.5 mall整合SpringTask实现定时任务
+### mall整合SpringTask实现定时任务
 
 * 注意配置类的增加，用于初始化
 * 了解注解的使用方法，尤其是 `@Scheduled(cron = "1/5 * * ? * ?")`的汉语，[参考](https://blog.csdn.net/m0_37179470/article/details/81271607)
 
-### 1.6 mall整合Elasticsearch实现表数据搜索
+### mall整合Elasticsearch实现表数据搜索
 
 * 注意对应Dao的编写。Elasticsearch用于大数据查找效率高
 
-### 1.7 mall整合RabbitMQ实现延时消息
+### mall整合RabbitMQ实现延时消息
 
 * 注意理解`RabbitMqConfig`配置文件的含义，队列交换机的绑定策略，交换机类型的选择
 * 延时消息的处理
+
+### mall整合各类文件存储服务
+
+* oss阿里的对象存储
+* minio对象存储
+* fastdfs存储
